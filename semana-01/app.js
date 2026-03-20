@@ -47,3 +47,16 @@ p1.mostrarLenguajes();
 const persona = new Persona('Juan','Juan@dv.edu.ar' );
 
 console.log(persona)
+
+
+const h1 = document.querySelector('h1');
+const nombre = document.querySelector('#nombre');
+const email = document.querySelector('#email');
+
+h1.textContent = "Semana 01";
+
+persona.showEmail(email)
+
+
+localStorage.setItem('nombre', 'Juilia');
+localStorage.getItem('nombre')

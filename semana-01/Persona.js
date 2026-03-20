@@ -14,4 +14,7 @@ class Persona {
     setEmail(email){
         this.email = email;
     }
+    showEmail(nodo){
+        nodo.textContent = this.email
+    }
 }
