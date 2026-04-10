@@ -10,7 +10,7 @@ export function getUsers() {
 
       console.log("✅ Usuarios obtenidos");
       resolve(users);
-    }, 1500);
+    }, 5500);
   });
 }
 
@@ -27,7 +27,7 @@ export function getCartsByUser(userId) {
 
       console.log("✅ Carrito obtenido");
       resolve(carts[userId]);
-    }, 1500);
+    }, 2500);
   });
 }
 
