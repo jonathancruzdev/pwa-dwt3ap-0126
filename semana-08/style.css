@@ -1,0 +1,22 @@
+header {
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+main {
+    min-height: 75vh;
+}
+
+footer {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 64px;
+}
