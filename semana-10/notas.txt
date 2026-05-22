@@ -1,0 +1,3 @@
+Hola, soy una nota!
+
+-- Aplicacion que funcionan sin conexion a internet
