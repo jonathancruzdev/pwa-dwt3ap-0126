@@ -13,6 +13,7 @@ const estadoVacio = document.querySelector('#estadoVacio');
 
 let gastos = [];
 
+navigator.serviceWorker.register('./sw.js');
 
 btnAbrirModal.addEventListener('click', abrirModal);
 btnCerrarModal.addEventListener('click', cerrarModal);
@@ -32,6 +33,8 @@ formGasto.addEventListener('submit', async (event) => {
         descripcion: inputDescripcion.value.trim(),
         monto: Number(inputMonto.value)
     };
+
+    const resultado = await guardarGasto( nuevoGasto );
 
     gastos.push(nuevoGasto);
     renderGastos();
@@ -72,7 +75,7 @@ function renderGastos() {
 }
 
 async function iniciarApp() {
-    
+    gastos = await obtenerGastos();
     renderGastos();
 }
 
