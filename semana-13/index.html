@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Synthesis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="icons/icon-192.png" type="image/png">
+</head>
+<body>
+
+  <main class="app">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PWA</span>
+        <h1>Speech Synthesis</h1>
+        <p>De Texto a Audio</p>
+      </div>
+
+      <div class="icon-box">JS</div>
+      <div class="msg hide">
+        <p> Si conexión</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>API del Navegador</h2>
+          <p>Aplicaciones Web Progresivas</p>
+        </div>
+        <select id="sVoces"></select>
+        <button id="btnLeer" class="btn-primary">
+          Leer
+        </button>
+      </div>
+
+      <div class="empty-state">
+          <p id="pTexto">Una Aplicación Web Progresiva (PWA) es un sitio web que utiliza tecnologías modernas</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalGasto" class="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Nuevo gasto</h2>
+        <button id="btnCerrarModal" class="btn-close">×</button>
+      </div>
+
+      <form id="formGasto">
+        <label> Descripción
+          <input type="text" id="descripcion" placeholder="Ej: Café" required />
+        </label>
+
+        <label> Monto
+          <input type="number" id="monto" placeholder="Ej: 1500" required />
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" id="btnCancelar" class="btn-secondary"> Cancelar </button>
+
+          <button type="submit" class="btn-primary"> Guardar gasto </button>
+        </div>
+      </form>
+    </div>
+  </div>
+    
+  <script src="js/app.js" type="module" defer></script>
+</body>
+</html>
