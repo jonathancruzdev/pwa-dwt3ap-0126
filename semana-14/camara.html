@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            width:  100%;
+        }
+    </style>
+</head>
+<body>
+            <div>
+          <input list="browsers">
+
+          <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Google Chrome">
+            <option value="Opera">
+            <option value="Safari">
+          </datalist>
+        </div>
+        <video id="video" autoplay></video>
+        <button id="btnCapturar"> Capturar</button>
+        <canvas id="canvas"></canvas>
+<script>
+    // navigator.mediaDevices.getDisplayMedia({video: true})
+   const video = document.querySelector('#video')
+   const btnCapturar = document.querySelector('#btnCapturar')
+   const canvas = document.querySelector('#canvas')
+
+   navigator.mediaDevices.getUserMedia({video: true})
+    .then( stream => {
+        video.srcObject = stream;
+    }).catch( error => {
+        console.error(error);
+    })
+
+    btnCapturar.addEventListener('click', () =>{
+        const contexto = canvas.getContext('2d');
+
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        contexto.drawImage( video, 0, 0)
+    })
+
+</script>
+</body>
+</html>
